@@ -102,6 +102,20 @@
   <p><strong>WhatsApp:</strong> +233 242 123 801</p>
   <p><strong>Email:</strong> willyoks@gmail.com</p>
 </section>
+<form onsubmit="sendToWhatsApp(); return false;">
+  <input type="text" id="item" placeholder="Item (T-shirt, Hoodie)" required>
+  <input type="number" id="qty" placeholder="Quantity" required>
+  <button class="btn">Request Quote</button>
+</form>
+
+<script>
+function sendToWhatsApp() {
+  const item = document.getElementById("item").value;
+  const qty = document.getElementById("qty").value;
+  const msg = `Hello, I want a quote.%0AItem: ${item}%0AQuantity: ${qty}`;
+  window.open(`https://wa.me/233XXXXXXXXX?text=${msg}`, "_blank");
+}
+</script>
 
 <footer>
   <p>© 2026 DTF Yooku. All rights reserved.</p>
